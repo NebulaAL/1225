@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 18
       - run: cd knowledge-site && npm install
-      - run: cd knowledge-site && npm run docs:build
+      - run: cd knowledge-site && npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: knowledge-site/docs/.vitepress/dist
