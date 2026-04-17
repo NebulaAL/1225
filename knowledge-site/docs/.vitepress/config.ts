@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/1225/',
   title: 'AI 效率工具站',
   description: '精选 AI 工具 & 编程资源，持续更新',
   lang: 'zh-CN',
