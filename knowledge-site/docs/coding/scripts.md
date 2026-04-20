@@ -2,7 +2,7 @@
 
 > 本文档基于德州扑克在线游戏后端项目的实际部署脚本整理，适合后端新手开发者快速了解一套完整后端项目所需的工具链与部署流程。
 
-![后端项目搭建全流程指南](/images/image_generated_20260416_210653_192_0_229ab3ed-5a6f-41c9-9e36-868f134bfabb.png)
+![后端项目搭建全流程指南](/images/image_generated_20260416_210653_192_0_229ab3ed-5a6f-41c9-9e36-868f134bfabb.jpg)
 
 ## 一、技术栈概览
 
@@ -46,7 +46,7 @@ docker --version
 docker-compose --version
 ```
 
-![验证工具版本](/images/image_generated_20260416_213237_643_0_0bdacaf1-d9a4-47b5-b161-52565ff706ac.png)
+![验证工具版本](/images/image_generated_20260416_213237_643_0_0bdacaf1-d9a4-47b5-b161-52565ff706ac.jpg)
 
 ### 第二步：初始化数据库
 
@@ -90,14 +90,14 @@ mvn clean package -DskipTests
 java -jar target/texas-holdem-backend-1.0.0.jar
 ```
 
-![VS Code + Maven 构建项目](/images/image_generated_20260416_213645_820_0_a7df22c5-31b6-4981-bf6a-f08b5886c870.png)
+![VS Code + Maven 构建项目](/images/image_generated_20260416_213645_820_0_a7df22c5-31b6-4981-bf6a-f08b5886c870.jpg)
 
 启动后访问：
 - 应用程序：`http://localhost:8080`
 - Swagger 文档：`http://localhost:8080/swagger-ui.html`
 - 健康检查：`http://localhost:8080/actuator/health`
 
-![Swagger API 文档界面](/images/image_generated_20260416_214104_075_0_035d56e5-4291-4fa7-9a84-7748768a6b78.png)
+![Swagger API 文档界面](/images/image_generated_20260416_214104_075_0_035d56e5-4291-4fa7-9a84-7748768a6b78.jpg)
 
 ## 三、Docker 容器化部署（推荐）
 
@@ -175,7 +175,7 @@ docker-compose up -d
 docker-compose ps
 ```
 
-![Docker Desktop 运行中的容器](/images/image_generated_20260416_213925_847_0_345bd879-f338-4b3a-a68f-29851bc1a069.png)
+![Docker Desktop 运行中的容器](/images/image_generated_20260416_213925_847_0_345bd879-f338-4b3a-a68f-29851bc1a069.jpg)
 
 ```bash
 # 查看应用日志（实时）
@@ -248,7 +248,7 @@ netstat -ano | findstr :8080
 3. **HTTPS**：配置 Nginx SSL 证书，将 HTTP 流量重定向到 HTTPS
 4. **移除开发工具**：生产环境去掉 Adminer 和 Redis Commander 服务
 
-![Adminer 数据库管理界面](/images/image_generated_20260416_214110_373_0_e5a3f19f-b481-400b-85f3-d5f0e85cc120.png)
+![Adminer 数据库管理界面](/images/image_generated_20260416_214110_373_0_e5a3f19f-b481-400b-85f3-d5f0e85cc120.jpg)
 
 5. **日志管理**：`./logs` 目录挂载到宿主机，配置日志轮转
 6. **健康检查**：利用 `/actuator/health` 接入负载均衡器的健康探测
