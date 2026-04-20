@@ -1,0 +1,564 @@
+body.ds-no-scroll,
+body.ds-no-scroll .VPContent,
+body.ds-no-scroll .VPDoc {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+/* ───── Chat Container ───── */
+.ds-chat {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: calc(100vh - var(--vp-nav-height) - 40px);
+  padding: 20px 24px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+}
+
+/* ───── Top Bar ───── */
+.ds-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.ds-model-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #f3f0ff;
+  border: 1px solid #e0d9ff;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #7c5cfc;
+  cursor: pointer;
+  transition: background 0.15s;
+  user-select: none;
+}
+
+.ds-model-badge:hover {
+  background: #ece6ff;
+}
+
+.ds-model-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #52c41a;
+  flex-shrink: 0;
+}
+
+.ds-chevron {
+  width: 14px;
+  height: 14px;
+  color: #7c5cfc;
+}
+
+/* ───── Overlay & Modal ───── */
+.ds-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ds-settings-modal {
+  background: white;
+  border-radius: 16px;
+  width: 420px;
+  max-width: calc(100vw - 32px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ds-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ds-modal-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.ds-modal-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ds-modal-footer {
+  padding: 14px 20px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ───── Fields ───── */
+.ds-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ds-field-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ds-saved-tag {
+  font-size: 11px;
+  font-weight: 400;
+  color: #52c41a;
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.ds-preset-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ds-preset-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #ebebeb;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.12s;
+}
+
+.ds-preset-item:hover {
+  border-color: #c5b8ff;
+  background: #faf8ff;
+}
+
+.ds-preset-item.active {
+  border-color: #7c5cfc;
+  background: #f3f0ff;
+  color: #7c5cfc;
+  font-weight: 500;
+}
+
+.ds-check {
+  width: 16px;
+  height: 16px;
+  color: #7c5cfc;
+}
+
+.ds-field-input {
+  padding: 9px 12px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a1a1a;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ds-field-input:focus {
+  border-color: #7c5cfc;
+}
+
+.ds-key-row {
+  display: flex;
+  gap: 8px;
+}
+
+.ds-key-row .ds-field-input {
+  flex: 1;
+}
+
+.ds-btn-clear {
+  padding: 0 12px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.12s;
+}
+
+.ds-btn-clear:hover {
+  border-color: #ff7875;
+  color: #ff4d4f;
+}
+
+.ds-btn-cancel {
+  padding: 8px 18px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.12s;
+}
+
+.ds-btn-cancel:hover {
+  border-color: #bbb;
+  color: #333;
+}
+
+.ds-btn-save {
+  padding: 8px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #7c5cfc;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.ds-btn-save:hover {
+  background: #6a49e8;
+}
+
+/* ───── Buttons ───── */
+.ds-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+  white-space: nowrap;
+  font-family: inherit;
+  background: #7c5cfc;
+  color: white;
+}
+
+.ds-btn:hover:not(:disabled) {
+  background: #6a49e8;
+}
+
+.ds-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ds-btn-ghost {
+  background: transparent;
+  color: #888;
+  border: 1px solid #e0e0e0;
+}
+
+.ds-btn-ghost:hover:not(:disabled) {
+  background: #f0f0f0;
+  color: #555;
+}
+
+/* ───── Messages ───── */
+.ds-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 8px 4px;
+  scroll-behavior: smooth;
+}
+
+.ds-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.ds-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ds-messages::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 2px;
+}
+
+.ds-empty {
+  margin: auto;
+  color: #bbb;
+  font-size: 14px;
+  text-align: center;
+  padding: 40px 0;
+}
+
+/* ───── Message Row ───── */
+.ds-msg-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ds-msg-row.user {
+  flex-direction: row-reverse;
+}
+
+.ds-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ds-avatar.assistant {
+  background: linear-gradient(135deg, #7c5cfc 0%, #5b9cf6 100%);
+}
+
+.ds-avatar.user {
+  background: #e8e4ff;
+  font-size: 13px;
+  color: #7c5cfc;
+  font-weight: 600;
+}
+
+.ds-bubble {
+  max-width: 70%;
+  padding: 11px 15px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.65;
+  word-break: break-word;
+}
+
+.ds-bubble.user {
+  background: #7c5cfc;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.ds-bubble.assistant {
+  background: white;
+  color: #1a1a1a;
+  border: 1px solid #ebebeb;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.ds-bubble.assistant code {
+  background: #f3f0ff;
+  color: #7c5cfc;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.ds-bubble.user code {
+  background: rgba(255,255,255,0.2);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+/* streaming cursor */
+.ds-typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+  background: white;
+  border: 1px solid #ebebeb;
+  border-radius: 14px;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.ds-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #bbb;
+  animation: ds-dot 1.2s infinite;
+}
+
+.ds-typing span:nth-child(2) { animation-delay: 0.2s; }
+.ds-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes ds-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+.ds-avatar svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ───── Input Area ───── */
+.ds-input-wrap {
+  background: white;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 14px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.15s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ds-input-wrap:focus-within {
+  border-color: #7c5cfc;
+}
+
+.ds-textarea {
+  width: 100%;
+  min-height: 52px;
+  max-height: 160px;
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1a1a1a;
+  background: transparent;
+  line-height: 1.6;
+  padding: 0;
+}
+
+.ds-textarea::placeholder {
+  color: #bbb;
+}
+
+.ds-input-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ds-input-hint {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.ds-send-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  border: none;
+  background: #7c5cfc;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, opacity 0.15s;
+  flex-shrink: 0;
+}
+
+.ds-send-btn:hover:not(:disabled) {
+  background: #6a49e8;
+}
+
+.ds-send-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.ds-send-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}
+
+.ds-stop-btn {
+  background: #ff4d4f !important;
+}
+
+.ds-stop-btn:hover {
+  background: #e03e40 !important;
+}
+
+.ds-img-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  border: 1.5px solid #e0e0e0;
+  background: white;
+  color: #7c5cfc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.ds-img-btn:hover:not(:disabled) {
+  background: #f3f0ff;
+  border-color: #7c5cfc;
+}
+
+.ds-img-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.ds-img-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ───── Image Generation ───── */
+.ds-img-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ds-img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* ───── Error ───── */.ds-error-bar {
+  font-size: 13px;
+  color: #ff4d4f;
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 8px;
+  padding: 8px 12px;
+}

@@ -42,11 +42,15 @@ export default defineConfig({
           ]
         }
       ],
+      '/ai-chat/': [
+        {
+          text: 'AI 对话',
+          items: [
+            { text: 'DeepSeek 对话', link: '/ai-chat/' }
+          ]
+        }
+      ],
     },
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com' }
-    ],
 
     footer: {
       message: '持续更新中 | 最后更新于 2026 年 4 月',
