@@ -20,11 +20,7 @@ export default defineConfig({
         {
           text: 'AI 工具精选',
           items: [
-            { text: '概览', link: '/ai-tools/' },
-            { text: '对话类 AI', link: '/ai-tools/chat' },
-            { text: 'AI 绘图', link: '/ai-tools/image' },
-            { text: 'AI 视频', link: '/ai-tools/video' },
-            { text: '提示词模板', link: '/ai-tools/prompts' },
+            { text: 'claude 搭建', link: '/ai-tools/claude-guide' },
           ]
         }
       ],
@@ -32,10 +28,7 @@ export default defineConfig({
         {
           text: '编程资源',
           items: [
-            { text: '概览', link: '/coding/' },
-            { text: 'Python 自动化', link: '/coding/python' },
-            { text: '前端速查', link: '/coding/frontend' },
-            { text: '实用脚本', link: '/coding/scripts' },
+            { text: '后端项目从 0 到 1 搭建指南', link: '/coding/scripts' },
           ]
         }
       ],
