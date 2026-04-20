@@ -20,7 +20,7 @@ export default defineConfig({
         {
           text: 'AI 工具精选',
           items: [
-            { text: 'claude 搭建', link: '/ai-tools/claude-guide' },
+            { text: 'Claude 搭建', link: '/ai-tools/claude-guide' },
           ]
         }
       ],
