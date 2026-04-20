@@ -10,8 +10,8 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: 'AI 工具', link: '/ai-tools/claude-guide' },
-      { text: '编程资源', link: '/coding/scripts' },
+      { text: 'AI 工具', link: '/ai-tools/' },
+      { text: '编程资源', link: '/coding/' },
       { text: '效率提升', link: '/productivity/' },
     ],
 
