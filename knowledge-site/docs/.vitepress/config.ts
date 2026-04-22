@@ -7,6 +7,24 @@ export default defineConfig({
   lang: 'zh-CN',
   lastUpdated: true,
 
+  // 开发环境代理配置（解决 CORS 问题）
+  vite: {
+    server: {
+      proxy: {
+        '/api/minimax': {
+          target: 'https://api.minimaxi.com',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api\/minimax/, '/anthropic')
+        },
+        '/api/deepseek': {
+          target: 'https://api.deepseek.com',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api\/deepseek/, '/v1/chat/completions')
+        }
+      }
+    }
+  },
+
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
@@ -21,6 +39,7 @@ export default defineConfig({
           text: 'AI 工具精选',
           items: [
             { text: 'Claude 搭建', link: '/ai-tools/claude-guide' },
+            { text: '户外季节小程序 PRD', link: '/ai-tools/uniapp' },
           ]
         }
       ],
