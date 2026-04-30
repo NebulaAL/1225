@@ -67,7 +67,7 @@ export default defineConfig({
           text: '生活攻略',
           items: [
             { text: '概览', link: '/life/' },
-            { text: '重庆 2 天旅游攻略', link: '/life/chongqing-2-day-travel' },
+            { text: '重庆路线图 Word', link: '/files/travel/chongqing-2-day-route-map.docx' },
           ]
         }
       ],
