@@ -31,6 +31,7 @@ export default defineConfig({
       { text: 'AI 工具', link: '/ai-tools/' },
       { text: '编程资源', link: '/coding/' },
       { text: '效率提升', link: '/productivity/' },
+      { text: '生活攻略', link: '/life/' },
     ],
 
     sidebar: {
@@ -58,6 +59,15 @@ export default defineConfig({
             { text: '概览', link: '/productivity/' },
             { text: 'Mac 效率工具', link: '/productivity/mac' },
             { text: '自动化工作流', link: '/productivity/automation' },
+          ]
+        }
+      ],
+      '/life/': [
+        {
+          text: '生活攻略',
+          items: [
+            { text: '概览', link: '/life/' },
+            { text: '重庆 2 天旅游攻略', link: '/life/chongqing-2-day-travel' },
           ]
         }
       ],

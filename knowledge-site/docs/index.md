@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: 效率提升
       link: /productivity/
+    - theme: alt
+      text: 生活攻略
+      link: /life/
 
 features:
   - icon: 🤖
@@ -26,6 +29,9 @@ features:
   - icon: ⚡
     title: 效率提升
     details: Mac 效率工具、自动化工作流，让你的工作效率翻倍
+  - icon: 🧭
+    title: 生活攻略
+    details: 城市旅行、路线规划和实用清单，方便直接照着执行
   - icon: 🔄
     title: 持续更新
     details: 每周更新，买一次永久查看，标注最新更新日期
